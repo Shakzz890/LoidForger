@@ -1,13 +1,12 @@
 const channels = {
-    gma7con: {
-    name: "GMA 7 (CON)",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/GMA_Network_Logo.svg/2048px-GMA_Network_Logo.svg.png",
-    type: "widevine",
-    manifestUri: "http://143.44.136.110:6910/001/2/ch...nifest.mpd?virtualDomain=001.live_hls.zte.com",
-    licenseServerUri: "http://143.44.136.74:9443/widevine/?deviceId=02:00:00:00:00:00"
+   gma: {
+    name: "GMA",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/GMA_Network_Logo_Vector.svg/1200px-GMA_Network_Logo_Vector.svg.png", // You can change this
+    type: "hls",
+    manifestUri: "https://ott.m3u8.nathcreqtives.com/gma/stream/manifest.m3u8",
   },
-   
-pbarush: {
+
+ pbarush: {
     name: "PBA Rush",
     type: "clearkey",
     manifestUri: "https://rumble.com/live-hls-dvr/6u5e2k/playlist.m3u8",
