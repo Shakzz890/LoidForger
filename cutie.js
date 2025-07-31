@@ -1,11 +1,12 @@
 const channels = {
-   gma: {
-    name: "GMA",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/GMA_Network_Logo_2011.svg", // You can change this
-    type: "hls",
-    manifestUri: "https://ott.udptv.xyz/stream/udptvu...ee46d3167cbb669dddcd7f2e9f877b9ed7ee2bcc5bdfd",
+    gma7con: {
+    name: "GMA 7 (CON)",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/GMA_Network_Logo.svg/2048px-GMA_Network_Logo.svg.png",
+    type: "widevine",
+    manifestUri: "http://143.44.136.110:6910/001/2/ch...nifest.mpd?virtualDomain=001.live_hls.zte.com",
+    licenseServerUri: "http://143.44.136.74:9443/widevine/?deviceId=02:00:00:00:00:00"
   },
-
+   
   hbo: {
     name: "HBO",
     type: "clearkey",
