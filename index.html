@@ -361,6 +361,26 @@
       searchInput.dispatchEvent(new Event('input'));
     });
   </script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video" controls autoplay></video>
+<script>
+  const video = document.getElementById('video');
+  const url = 'https://your_full_valid_url_here.m3u8';
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(url);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.ERROR, function (event, data) {
+      console.error("HLS.js error:", data);
+    });
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = url;
+  } else {
+    console.error("HLS not supported");
+  }
+</script>
+
 
   <!-- Your updated cutie.js should handle all logic -->
   <script src="cutie.js"></script>
