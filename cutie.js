@@ -1062,10 +1062,10 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
   list.scrollTop = scrollTop;
   updateFocus();
 
-  const countDisplay = document.getElementById("channelCountText");
-  if (countDisplay) {
-    countDisplay.textContent = `${shownCount} channel${shownCount !== 1 ? "s" : ""} found in "${tabs[currentTabIndex]}"`;
-  }
+ const countDisplay = document.getElementById("channelCountText");
+if (countDisplay) {
+  countDisplay.textContent = `${shownCount} channel${shownCount !== 1 ? "s" : ""} found`;
+}
 }
 
 function loadChannel(key) {
