@@ -4,7 +4,7 @@ const channels = {
   logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/GMA_Network_Logo_Vector.svg/1200px-GMA_Network_Logo_Vector.svg.png",
   type: "hls",
   manifestUri: "https://ott.m3u8.nathcreqtives.com/gma/stream/manifest.m3u8",
-  group: "live",
+  group: "Entertainment",
 },
 
 pbarush: {
@@ -14,7 +14,7 @@ pbarush: {
   keyId: "76dc29dd87a244aeab9e8b7c5da1e5f3",
   key: "95b2f2ffd4e14073620506213b62ac82",
   logo: "https://upload.wikimedia.org/wikipedia/en/c/cd/PBA_Rush_logo.png",
-  group: "live",
+  group: "Entertainment",
 },
 
 tv5: {
@@ -209,6 +209,7 @@ cartoonnetworkhd: {
     keyId: "1b618a291cece44c9845dddfc4fd9b10",
     key: "bf7e1b97555c4acb7455f711b2a9ff16",
     logo: "https://laguia.tv/_nuxt/img/CNN_512.0e91aae.png",
+    group: "News",
   },
 
   anc: {
