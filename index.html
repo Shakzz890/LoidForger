@@ -378,42 +378,12 @@
         Contact Me:
         <a href="https://facebook.com/profile.php?id=100083316728361" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
         <a href="https://youtube.com/@Shakzz05" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
-        <a href="https://mail.google.com/mail/?view=cm&to=shakzz05.business@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-envelope"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&to=shakzz05.business@gmail.com" target="_blank" class="social-link"><i class="fas fa-envelope"></i></a>
         <noscript><a href="mailto:shakzz05.business@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a></noscript>
       </div>
       <div class="right-section">© All rights reserved 2025</div>
     </div>
   </footer>
-
-  <script>
-    const searchInput = document.getElementById('search');
-    const clearBtn = document.getElementById('clearSearch');
-    const categoryButtons = document.querySelectorAll('.category-button');
-
-    searchInput.addEventListener('input', () => {
-      clearBtn.style.display = searchInput.value ? 'block' : 'none';
-    });
-
-    clearBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      clearBtn.style.display = 'none';
-      searchInput.dispatchEvent(new Event('input'));
-    });
-
-    categoryButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        categoryButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        const selectedCategory = button.getAttribute('data-category');
-        filterChannelsByCategory(selectedCategory);
-      });
-    });
-
-    function filterChannelsByCategory(category) {
-      console.log("Filter by:", category);
-      // You should implement actual filtering logic in cutie.js using this category value
-    }
-  </script>
 
   <script src="cutie.js"></script>
 </body>
