@@ -443,7 +443,7 @@ cartoonnetworkhd: {
     keyId: "3e429eb91a1791d55df2a554dc58dda7",
     key: "2f688f94ef580a61eada6932598137e4",
     logo: "https://the-bithub.com/amznmovies",
-    group: ["cartoons-animations"],
+    group: ["movies"],
   },
 
   hitsnow: {
@@ -1068,7 +1068,7 @@ let focusIndex = 0;
 let focusableButtons = [];
 
 // Match your category tab buttons
-const tabs = ["all", "news", "entertainment", "cartoons-animations", "documentary", "sports", "movies"];
+const tabs = ["all", "news", "entertainment", "cartoons-animations", "sports", "documentary", "movies"];
 let currentTabIndex = 0;
 
 function renderChannelButtons(filter = "", preserveScroll = false) {
