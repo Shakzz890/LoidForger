@@ -1017,7 +1017,7 @@ let currentSearchFilter = "";
 let currentChannelKey = "kapamilya";
 let focusIndex = 0;
 let focusableButtons = [];
-let tabs = ["live", "movies", "series"];
+let tabs = ["all", "live", "movies", "series"];
 let currentTabIndex = 0;
 
 function renderChannelButtons(filter = "", preserveScroll = false) {
@@ -1028,15 +1028,18 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
   list.innerHTML = "";
   shownCount = 0;
 
+  const selectedGroup = tabs[currentTabIndex];
+
   const sortedChannels = Object.entries(channels).sort((a, b) =>
     a[1].name.localeCompare(b[1].name)
   );
 
   sortedChannels.forEach(([key, channel]) => {
-    const matchesFilter = channel.name.toLowerCase().includes(filter.toLowerCase());
-    const matchesCategory = !channel.group || channel.group.toLowerCase() === tabs[currentTabIndex];
+    const group = channel.group || "live";
+    const matchesSearch = channel.name.toLowerCase().includes(filter.toLowerCase());
+    const matchesGroup = selectedGroup === "all" || group === selectedGroup;
 
-    if (!matchesFilter || !matchesCategory) return;
+    if (!matchesSearch || !matchesGroup) return;
 
     const btn = document.createElement("button");
     btn.className = "channel-button";
@@ -1061,7 +1064,7 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
 
   const countDisplay = document.getElementById("channelCountText");
   if (countDisplay) {
-    countDisplay.textContent = `${shownCount} channel${shownCount !== 1 ? "s" : ""} found`;
+    countDisplay.textContent = `${shownCount} channel${shownCount !== 1 ? "s" : ""} found in "${tabs[currentTabIndex]}"`;
   }
 }
 
@@ -1108,7 +1111,7 @@ function loadChannel(key) {
   });
 }
 
-// TV remote + keyboard nav
+// Keyboard Navigation
 document.addEventListener("keydown", function (e) {
   if (e.target.tagName === "INPUT") return;
   if (focusableButtons.length === 0) return;
@@ -1150,9 +1153,9 @@ function updateFocus() {
 function switchTab(direction) {
   currentTabIndex = (currentTabIndex + direction + tabs.length) % tabs.length;
 
-  tabs.forEach((tab, i) => {
-    const el = document.getElementById(`tab-${tab}`);
-    if (el) el.classList.toggle("active", i === currentTabIndex);
+  // Update active tab button
+  document.querySelectorAll(".category-button").forEach((btn, i) => {
+    btn.classList.toggle("active", i === currentTabIndex);
   });
 
   focusIndex = 0;
@@ -1182,24 +1185,17 @@ window.onload = () => {
     updateFocus();
   });
 
-  // Bind category tab click handlers
+  // Bind tab buttons
   document.querySelectorAll(".category-button").forEach((button, index) => {
-    button.id = `tab-${tabs[index]}`; // ensure matching IDs
     button.addEventListener("click", () => {
       currentTabIndex = index;
-
-      // Update active tab button
       document.querySelectorAll(".category-button").forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
-
       focusIndex = 0;
       renderChannelButtons(currentSearchFilter);
     });
   });
 
-  // Initial render
-  renderChannelButtons();
-  if (currentChannelKey && channels[currentChannelKey]) {
-    loadChannel(currentChannelKey);
-  }
+  renderChannelButtons(); // Initial render
+  if (channels[currentChannelKey]) loadChannel(currentChannelKey);
 };
