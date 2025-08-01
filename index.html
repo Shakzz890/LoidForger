@@ -143,6 +143,21 @@
       padding: 8px 10px;
       background-color: #1a1a1a;
       border-bottom: 1px solid #333;
+
+      /* Responsive horizontal scroll */
+      overflow-x: auto;
+      gap: 8px;
+      scrollbar-width: thin; /* Firefox */
+      scrollbar-color: var(--accent-color) #333;
+    }
+
+    .category-bar::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .category-bar::-webkit-scrollbar-thumb {
+      background-color: var(--accent-color);
+      border-radius: 3px;
     }
 
     .category-button {
@@ -154,6 +169,7 @@
       cursor: pointer;
       font-weight: bold;
       transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap; /* Prevent wrapping */
     }
 
     .category-button:hover {
@@ -329,6 +345,17 @@
         width: 100%;
         max-height: 300px;
         aspect-ratio: 16 / 9;
+      }
+
+      /* Category bar tweaks for small screens */
+      .category-bar {
+        justify-content: flex-start;
+      }
+
+      .category-button {
+        flex: 0 0 auto; /* prevent growing, enable scrolling */
+        padding: 6px 10px;
+        font-size: 0.9rem;
       }
     }
   </style>
