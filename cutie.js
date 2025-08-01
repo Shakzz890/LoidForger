@@ -1,50 +1,61 @@
 const channels = {
-   gma: {
-    name: "GMA",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/GMA_Network_Logo_Vector.svg/1200px-GMA_Network_Logo_Vector.svg.png", // You can change this
-    type: "hls",
-    manifestUri: "https://ott.m3u8.nathcreqtives.com/gma/stream/manifest.m3u8",
-    group: "live",
-  },
-
- pbarush: {
-    name: "PBA Rush",
-    type: "clearkey",
-    manifestUri: "https://rumble.com/live-hls-dvr/6u5e2k/playlist.m3u8",
-    keyId: "76dc29dd87a244aeab9e8b7c5da1e5f3",
-    key: "95b2f2ffd4e14073620506213b62ac82",
-    logo: "https://upload.wikimedia.org/wikipedia/en/c/cd/PBA_Rush_logo.png",
+  gma: {
+  name: "GMA",
+  logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/GMA_Network_Logo_Vector.svg/1200px-GMA_Network_Logo_Vector.svg.png",
+  type: "hls",
+  manifestUri: "https://ott.m3u8.nathcreqtives.com/gma/stream/manifest.m3u8",
+  group: "live",
 },
 
-  tv5: {
-    name: "TV 5 HD",
-    type: "clearkey",
-    manifestUri:
-      "https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/tv5_hd.mpd",
-    keyId: "2615129ef2c846a9bbd43a641c7303ef",
-    key: "07c7f996b1734ea288641a68e1cfdc4d",
-    logo: "https://vignette.wikia.nocookie.net/russel/images/f/f9/TV5_Logo_2011.png/revision/latest?cb=20161204035016",
-  },
+pbarush: {
+  name: "PBA Rush",
+  type: "clearkey",
+  manifestUri: "https://rumble.com/live-hls-dvr/6u5e2k/playlist.m3u8",
+  keyId: "76dc29dd87a244aeab9e8b7c5da1e5f3",
+  key: "95b2f2ffd4e14073620506213b62ac82",
+  logo: "https://upload.wikimedia.org/wikipedia/en/c/cd/PBA_Rush_logo.png",
+  group: "live",
+},
 
-  kapamilya: {
-    name: "Kapamilya Channel HD",
-    type: "clearkey",
-    manifestUri:
-      "https://d1uf7s78uqso1e.cloudfront.net/out/v1/efa01372657648be830e7c23ff68bea2/index.mpd",
-    keyId: "bd17afb5dc9648a39be79ee3634dd4b8",
-    key: "3ecf305d54a7729299b93a3d69c02ea5",
-    logo: "https://cms.cignal.tv/Upload/Images/Kapamilya%20Channel%20Logo%20alpha.png",
-  },
+tv5: {
+  name: "TV 5 HD",
+  type: "clearkey",
+  manifestUri: "https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/tv5_hd.mpd",
+  keyId: "2615129ef2c846a9bbd43a641c7303ef",
+  key: "07c7f996b1734ea288641a68e1cfdc4d",
+  logo: "https://vignette.wikia.nocookie.net/russel/images/f/f9/TV5_Logo_2011.png/revision/latest?cb=20161204035016",
+  group: "live",
+},
 
-  hbo: {
-    name: "HBO",
-    type: "clearkey",
-    manifestUri:
-      "https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbohd.mpd",
-    keyId: "d47ebabf7a21430b83a8c4b82d9ef6b1",
-    key: "54c213b2b5f885f1e0290ee4131d425b",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/d/de/HBO_logo.svg",
-  },
+kapamilya: {
+  name: "Kapamilya Channel HD",
+  type: "clearkey",
+  manifestUri: "https://d1uf7s78uqso1e.cloudfront.net/out/v1/efa01372657648be830e7c23ff68bea2/index.mpd",
+  keyId: "bd17afb5dc9648a39be79ee3634dd4b8",
+  key: "3ecf305d54a7729299b93a3d69c02ea5",
+  logo: "https://cms.cignal.tv/Upload/Images/Kapamilya%20Channel%20Logo%20alpha.png",
+  group: "live",
+},
+
+hbo: {
+  name: "HBO",
+  type: "clearkey",
+  manifestUri: "https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbohd.mpd",
+  keyId: "d47ebabf7a21430b83a8c4b82d9ef6b1",
+  key: "54c213b2b5f885f1e0290ee4131d425b",
+  logo: "https://upload.wikimedia.org/wikipedia/commons/d/de/HBO_logo.svg",
+  group: "movies",
+},
+
+hbofam: {
+  name: "HBO Family",
+  type: "clearkey",
+  manifestUri: "https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cg_hbofam.mpd",
+  keyId: "872910c843294319800d85f9a0940607",
+  key: "f79fd895b79c590708cf5e8b5c6263be",
+  logo: "https://www.pikpng.com/pngl/m/41-419283_hbo-family-logo-hbo-family-logo-png-clipart.png",
+  group: "movies",
+},
 
   hbofam: {
     name: "HBO Family",
