@@ -1022,11 +1022,10 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
   );
 
   sortedChannels.forEach(([key, channel]) => {
-    if (
-      !channel.name.toLowerCase().includes(filter.toLowerCase()) ||
-      (channel.group && channel.group.toLowerCase() !== tabs[currentTabIndex])
-    )
-      return;
+    const matchesFilter = channel.name.toLowerCase().includes(filter.toLowerCase());
+    const matchesCategory = !channel.group || channel.group.toLowerCase() === tabs[currentTabIndex];
+
+    if (!matchesFilter || !matchesCategory) return;
 
     const btn = document.createElement("button");
     btn.className = "channel-button";
@@ -1059,7 +1058,7 @@ function loadChannel(key) {
   const channel = channels[key];
   currentChannelKey = key;
 
-  renderChannelButtons(currentSearchFilter, true); // âœ… Preserve scroll
+  renderChannelButtons(currentSearchFilter, true); // ✅ Preserve scroll
 
   const channelInfo = document.getElementById("channelInfo");
   if (channelInfo) {
@@ -1149,7 +1148,6 @@ function switchTab(direction) {
   renderChannelButtons(currentSearchFilter);
 }
 
-// Handle search bar input and clear button
 window.onload = () => {
   const searchInput = document.getElementById("search");
   const clearBtn = document.getElementById("clearSearch");
@@ -1171,6 +1169,21 @@ window.onload = () => {
     renderChannelButtons("");
     focusIndex = 0;
     updateFocus();
+  });
+
+  // Bind category tab click handlers
+  document.querySelectorAll(".category-button").forEach((button, index) => {
+    button.id = `tab-${tabs[index]}`; // ensure matching IDs
+    button.addEventListener("click", () => {
+      currentTabIndex = index;
+
+      // Update active tab button
+      document.querySelectorAll(".category-button").forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      focusIndex = 0;
+      renderChannelButtons(currentSearchFilter);
+    });
   });
 
   // Initial render
