@@ -1116,7 +1116,7 @@ let focusIndex = 0;
 let focusableButtons = [];
 
 // Match your category tab buttons
-const tabs = ["all", "news", "entertainment", "cartoons-animations", "sports", "movies"];
+const tabs = ["all", "news", "entertainment", "cartoons-animations", "documentary", "sports", "movies"];
 let currentTabIndex = 0;
 
 function renderChannelButtons(filter = "", preserveScroll = false) {
