@@ -172,36 +172,36 @@
       white-space: nowrap; /* Prevent wrapping */
     }
 
-   .category-bar {
-  display: flex;
-  flex-direction: column; /* stack vertically */
-  padding: 8px 10px;
-  background-color: #1a1a1a;
-  border-bottom: 1px solid #333;
+    .category-button:hover {
+      background-color: var(--accent-color);
+      color: white;
+    }
 
-  /* Remove horizontal scroll */
-  overflow-x: visible;
-  gap: 8px;
-  scrollbar-width: none; /* hide scrollbar */
-}
+    .category-button.active {
+      background-color: var(--accent-color);
+      color: white;
+    }
 
-.category-bar::-webkit-scrollbar {
-  display: none; /* hide scrollbar for WebKit */
-}
+    .channel-list {
+      overflow-y: auto;
+      flex: 1;
+      padding: 0 10px;
+    }
 
-.category-button {
-  background-color: #333;
-  color: #ccc;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 12px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
-  width: 100%; /* make buttons full width */
-  white-space: normal; /* allow text wrapping if needed */
-}
-
+    .channel-button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #333;
+      border: 1px solid #2f2f2f;
+      border-radius: 8px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
     .channel-button:hover {
       background-color: #222;
