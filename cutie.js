@@ -967,6 +967,7 @@ dreamworks_tagalized: {
     type: "hls",
     manifestUri: "https://amg00627-amg00627c30-rakuten-es-3990.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanescc-rakutenes/playlist.m3u8",
     logo: "https://i.imgur.com/zKGnFe4.png",
+    group: "Cartoons",
   },
   supertoons: {
     name: "SuperToons TV",
