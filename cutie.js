@@ -1019,7 +1019,7 @@ let focusIndex = 0;
 let focusableButtons = [];
 
 // Use categories matching your HTML buttons
-const tabs = ["all", "live", "movies", "series"]; 
+const tabs = ["all", "News", "Entertainment", "Animations", "Cartoons", "Movies"]; 
 let currentTabIndex = 0;
 
 function renderChannelButtons(filter = "", preserveScroll = false) {
