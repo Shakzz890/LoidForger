@@ -4,7 +4,7 @@ const channels = {
   logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/GMA_Network_Logo_Vector.svg/1200px-GMA_Network_Logo_Vector.svg.png",
   type: "hls",
   manifestUri: "https://ott.m3u8.nathcreqtives.com/gma/stream/manifest.m3u8",
-  group:"News", "Entertainment",
+  group:["News", "Entertainment"],
 },
 
 pbarush: {
@@ -1019,8 +1019,8 @@ let currentChannelKey = "kapamilya";
 let focusIndex = 0;
 let focusableButtons = [];
 
-// Use categories matching your HTML buttons
-const tabs = ["all", "News", "Entertainment", "Animations", "Cartoons", "Movies"]; 
+// Match your category tab buttons
+const tabs = ["all", "News", "Entertainment", "Animations", "Cartoons", "Movies"];
 let currentTabIndex = 0;
 
 function renderChannelButtons(filter = "", preserveScroll = false) {
@@ -1033,7 +1033,7 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
 
   const selectedGroup = tabs[currentTabIndex];
 
-  // Sort channels by name (assuming `channels` object exists)
+  // Sort channels alphabetically
   const sortedChannels = Object.entries(channels).sort((a, b) =>
     a[1].name.localeCompare(b[1].name)
   );
@@ -1041,7 +1041,10 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
   sortedChannels.forEach(([key, channel]) => {
     const group = channel.group || "live";
     const matchesSearch = channel.name.toLowerCase().includes(filter.toLowerCase());
-    const matchesGroup = selectedGroup === "all" || group === selectedGroup;
+
+    const matchesGroup =
+      selectedGroup === "all" ||
+      (Array.isArray(group) ? group.includes(selectedGroup) : group === selectedGroup);
 
     if (!matchesSearch || !matchesGroup) return;
 
@@ -1164,7 +1167,6 @@ function updateFocus() {
 function switchTab(direction) {
   currentTabIndex = (currentTabIndex + direction + tabs.length) % tabs.length;
 
-  // Update active tab button
   const categoryButtons = document.querySelectorAll(".category-button");
   categoryButtons.forEach((btn, i) => {
     btn.classList.toggle("active", i === currentTabIndex);
