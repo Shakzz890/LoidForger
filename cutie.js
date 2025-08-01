@@ -967,7 +967,7 @@ dreamworks_tagalized: {
     type: "hls",
     manifestUri: "https://amg00627-amg00627c30-rakuten-es-3990.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanescc-rakutenes/playlist.m3u8",
     logo: "https://i.imgur.com/zKGnFe4.png",
-    group: "Cartoons",
+    group: "cartoons-animations",
   },
   supertoons: {
     name: "SuperToons TV",
@@ -1021,7 +1021,7 @@ let focusIndex = 0;
 let focusableButtons = [];
 
 // Match your category tab buttons
-const tabs = ["all", "News", "Entertainment", "Animations", "Cartoons", "Movies"];
+const tabs = ["all", "news", "entertainment", "cartoons-animations", "sports", "movies"];
 let currentTabIndex = 0;
 
 function renderChannelButtons(filter = "", preserveScroll = false) {
