@@ -959,7 +959,7 @@ dreamworks_tagalized: {
     keyId: "ef7d9dcfb99b406cb79fb9f675cba426",
     key: "b24094f6ca136af25600e44df5987af4",
     logo: "https://thumbs.dreamstime.com/b/bloomberg-logo-editorial-illustrative-white-background-logo-icon-vector-logos-icons-set-social-media-flat-banner-vectors-svg-210442338.jpg",
-    
+    group: ["entertainment"],
   },
   bbc_news: {
     name: "BBC News",
@@ -968,6 +968,8 @@ dreamworks_tagalized: {
     keyId: "f59650be475e4c34a844d4e2062f71f3",
     key: "119639e849ddee96c4cec2f2b6b09b40",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/BBC_News_2022_%28Alt%29.svg/1200px-BBC_News_2022_%28Alt%29.svg.png",
+    group: ["news"],
+    
   },
   dreamworks: {
     name: "DreamWorks HD",
@@ -976,6 +978,7 @@ dreamworks_tagalized: {
     keyId: "4ab9645a2a0a47edbd65e8479c2b9669",
     key: "8cb209f1828431ce9b50b593d1f44079",
     logo: "https://toppng.com/uploads/preview/dreamworks-logo-dreamworks-animation-logo-11563201748udwkzchrdf.png",
+    group: ["cartoons-animations"],
   },
   hits_now: {
     name: "HITS Now",
@@ -984,6 +987,7 @@ dreamworks_tagalized: {
     keyId: "14439a1b7afc4527bb0ebc51cf11cbc1",
     key: "92b0287c7042f271b266cc11ab7541f1",
     logo: "https://i.imgur.com/YeqyD9W.png",
+    group: ["movies"],
   },
   moonbug_kids: {
     name: "Moonbug",
@@ -992,6 +996,7 @@ dreamworks_tagalized: {
     keyId: "0bf00921bec94a65a124fba1ef52b1cd",
     key: "0f1488487cbe05e2badc3db53ae0f29f",
     logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Moonbug2ndLogo.png",
+    group: ["cartoons-animations"],
   },
   cnn_ph: {
     name: "CNN Philippines",
@@ -1000,15 +1005,17 @@ dreamworks_tagalized: {
     keyId: "900c43f0e02742dd854148b7a75abbec",
     key: "da315cca7f2902b4de23199718ed7e90",
     logo: "https://laguia.tv/_nuxt/img/CNN_512.0e91aae.png",
+    group: ["news"],
+
   },
   cartoonChannelPH: {
     name: "Cartoon Channel PH (10 AM - 8 PM)",
     type: "hls",
-    manifestUri:
-      "https://live20.bozztv.com/giatv/giatv-cartoonchannelph/cartoonchannelph/playlist.m3u8",
-    logo:
-      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b58bbc88-0030-4447-b99e-19e7dbc51b14/de71xo3-266469a4-3bd5-4bd7-890e-192c7798e0bb.png/v1/fill/w_1192,h_670/cartoon_channel_ph_logo__2020___present__by_kierariel_de71xo3-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYjU4YmJjODgtMDAzMC00NDQ3LWI5OWUtMTllN2RiYzUxYjE0XC9kZTcxeG8zLTI2NjQ2OWE0LTNiZDUtNGJkNy04OTBlLTE5MmM3Nzk4ZTBiYi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2FyUXQBaLF5j9GldZMJAM1ltGPFq7pMwwr6V7wyGpFs",
-  },
+    manifestUri: "https://live20.bozztv.com/giatv/giatv-cartoonchannelph/cartoonchannelph/playlist.m3u8",
+    logo: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b58bbc88-0030-4447-b99e-19e7dbc51b14/de71xo3-266469a4-3bd5-4bd7-890e-192c7798e0bb.png/v1/fill/w_1192,h_670/cartoon_channel_ph_logo__2020___present__by_kierariel_de71xo3-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYjU4YmJjODgtMDAzMC00NDQ3LWI5OWUtMTllN2RiYzUxYjE0XC9kZTcxeG8zLTI2NjQ2OWE0LTNiZDUtNGJkNy04OTBlLTE5MmM3Nzk4ZTBiYi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2FyUXQBaLF5j9GldZMJAM1ltGPFq7pMwwr6V7wyGpFs",
+    group: ["cartoons-animations"],
+    },
+  
   mrbean: {
     name: "MR BEAN",
     type: "hls",
@@ -1027,36 +1034,42 @@ dreamworks_tagalized: {
     type: "hls",
     manifestUri: "https://jungotvstream.chanall.tv/jungotv/jungopinoytv/stream.m3u8",
     logo: "https://yt3.googleusercontent.com/oT4LFcdusmWboxy8ZC9c6NS0riqRi6_96U-gXLT7C-NarXKKFjLDbyko6iFJVfr743e4eTnv=s900-c-k-c0x00ffffff-no-rj",
+    group: ["entertainment", "movies"],
 },
   hallypop: {
     name: "Hallypop",
     type: "hls",
     manifestUri: "https://jungotvstream.chanall.tv/jungotv/hallypop/stream.m3u8",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/25/GMA_HALLYPOP_LOGO_2020.jpg", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/25/GMA_HALLYPOP_LOGO_2020.jpg",
+    group: ["entertainment", "movies"],
   },
   screamflix: {
     name: "ScreamFlix",
     type: "hls",
     manifestUri: "https://jungotvstream.chanall.tv/jungotv/screamflix/stream.m3u8",
-    logo: "https://static.wikia.nocookie.net/logopedia/images/f/fb/Scream_Flix_Logo_2022.png/revision/latest/scale-to-width-down/1200?cb=20250419020619", 
+    logo: "https://static.wikia.nocookie.net/logopedia/images/f/fb/Scream_Flix_Logo_2022.png/revision/latest/scale-to-width-down/1200?cb=20250419020619",
+    group: ["movies"],
   },
   frontrow: {
     name: "Front Row",
     type: "hls",
     manifestUri: "https://jungotvstream.chanall.tv/jungotv/frontrow/stream.m3u8",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRneG2hIDzQS75A9KHg2FJTbE76qj9fX301dA&s", 
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRneG2hIDzQS75A9KHg2FJTbE76qj9fX301dA&s",
+    group: ["entertainment",],
   },
   combatgo: {
     name: "Combat Go",
     type: "hls",
     manifestUri: "https://jungotvstream.chanall.tv/jungotv/combatgo/stream.m3u8",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYm23zkJn2ZVrGTMUfLULxPtcAycgK-zb96A&s", 
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYm23zkJn2ZVrGTMUfLULxPtcAycgK-zb96A&s",
+    group: ["movies"],
   },
   awsn: {
     name: "AWSN",
     type: "hls",
     manifestUri: "https://amg02188-amg02188c2-jungotv-northamerica-5717.playouts.now.amagi.tv/playlist.m3u8",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScrgyuzyxnS4PB5zqcMI9MyZwjgxsEwr4lpg&s", 
+    group: ["entertainment"],
   },
 
  };
