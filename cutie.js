@@ -1017,7 +1017,9 @@ let currentSearchFilter = "";
 let currentChannelKey = "kapamilya";
 let focusIndex = 0;
 let focusableButtons = [];
-let tabs = ["all", "live", "movies", "series"];
+
+// Use categories matching your HTML buttons
+const tabs = ["all", "live", "movies", "series"]; 
 let currentTabIndex = 0;
 
 function renderChannelButtons(filter = "", preserveScroll = false) {
@@ -1030,6 +1032,7 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
 
   const selectedGroup = tabs[currentTabIndex];
 
+  // Sort channels by name (assuming `channels` object exists)
   const sortedChannels = Object.entries(channels).sort((a, b) =>
     a[1].name.localeCompare(b[1].name)
   );
@@ -1062,17 +1065,17 @@ function renderChannelButtons(filter = "", preserveScroll = false) {
   list.scrollTop = scrollTop;
   updateFocus();
 
- const countDisplay = document.getElementById("channelCountText");
-if (countDisplay) {
-  countDisplay.textContent = `${shownCount} channel${shownCount !== 1 ? "s" : ""} found`;
-}
+  const countDisplay = document.getElementById("channelCountText");
+  if (countDisplay) {
+    countDisplay.textContent = `${shownCount} channel${shownCount !== 1 ? "s" : ""} found`;
+  }
 }
 
 function loadChannel(key) {
   const channel = channels[key];
   currentChannelKey = key;
 
-  renderChannelButtons(currentSearchFilter, true); // ✅ Preserve scroll
+  renderChannelButtons(currentSearchFilter, true); // preserve scroll
 
   const channelInfo = document.getElementById("channelInfo");
   if (channelInfo) {
@@ -1116,26 +1119,33 @@ document.addEventListener("keydown", function (e) {
   if (e.target.tagName === "INPUT") return;
   if (focusableButtons.length === 0) return;
 
-  if (e.key === "ArrowDown") {
-    focusIndex = (focusIndex + 1) % focusableButtons.length;
-    updateFocus();
-    e.preventDefault();
-  } else if (e.key === "ArrowUp") {
-    focusIndex = (focusIndex - 1 + focusableButtons.length) % focusableButtons.length;
-    updateFocus();
-    e.preventDefault();
-  } else if (e.key === "Enter") {
-    focusableButtons[focusIndex].click();
-    e.preventDefault();
-  } else if (e.key === "ArrowLeft") {
-    switchTab(-1);
-    e.preventDefault();
-  } else if (e.key === "ArrowRight") {
-    switchTab(1);
-    e.preventDefault();
-  } else if (e.key === "Backspace") {
-    document.getElementById("search").focus();
-    e.preventDefault();
+  switch (e.key) {
+    case "ArrowDown":
+      focusIndex = (focusIndex + 1) % focusableButtons.length;
+      updateFocus();
+      e.preventDefault();
+      break;
+    case "ArrowUp":
+      focusIndex = (focusIndex - 1 + focusableButtons.length) % focusableButtons.length;
+      updateFocus();
+      e.preventDefault();
+      break;
+    case "Enter":
+      focusableButtons[focusIndex].click();
+      e.preventDefault();
+      break;
+    case "ArrowLeft":
+      switchTab(-1);
+      e.preventDefault();
+      break;
+    case "ArrowRight":
+      switchTab(1);
+      e.preventDefault();
+      break;
+    case "Backspace":
+      document.getElementById("search").focus();
+      e.preventDefault();
+      break;
   }
 });
 
@@ -1154,7 +1164,8 @@ function switchTab(direction) {
   currentTabIndex = (currentTabIndex + direction + tabs.length) % tabs.length;
 
   // Update active tab button
-  document.querySelectorAll(".category-button").forEach((btn, i) => {
+  const categoryButtons = document.querySelectorAll(".category-button");
+  categoryButtons.forEach((btn, i) => {
     btn.classList.toggle("active", i === currentTabIndex);
   });
 
@@ -1185,17 +1196,19 @@ window.onload = () => {
     updateFocus();
   });
 
-  // Bind tab buttons
-  document.querySelectorAll(".category-button").forEach((button, index) => {
+  // Bind category tab buttons
+  const categoryButtons = document.querySelectorAll(".category-button");
+  categoryButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
       currentTabIndex = index;
-      document.querySelectorAll(".category-button").forEach(btn => btn.classList.remove("active"));
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
       focusIndex = 0;
       renderChannelButtons(currentSearchFilter);
     });
   });
 
-  renderChannelButtons(); // Initial render
+  renderChannelButtons(); // initial render
+
   if (channels[currentChannelKey]) loadChannel(currentChannelKey);
 };
